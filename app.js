@@ -1,5 +1,5 @@
 
-const API_URL = 'https://script.google.com/macros/library/d/1giwXcyhOFL82keURVJVIapvcDquSw-lRMEZntJS_u20euNo7Y7U3yQnl/1'; 
+const API_URL = 'https://script.google.com/macros/s/AKfycbwiLRgL9IURKFynFS0KZp4sfRS2dWtqwOCcs_UsGtc1mBIveGClAJ_jv1dHAvzrE9V0/exec'; 
 
 // Elementos del DOM
 const form = document.getElementById('survey-form');
