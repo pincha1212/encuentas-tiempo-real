@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta en Tiempo Real</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tech Survey 2026</h1>
+            <p>Participa en nuestra encuesta y mira los resultados en tiempo real.</p>
+        </header>
+
+        <!-- Sección del Formulario -->
+        <main class="card" id="form-section">
+            <form id="survey-form">
+                <!-- Pregunta 1 -->
+                <div class="question-group">
+                    <h3>1. ¿Cuál es tu sistema operativo principal?</h3>
+                    <label><input type="radio" name="p1" value="Windows" required> Windows</label>
+                    <label><input type="radio" name="p1" value="macOS"> macOS</label>
+                    <label><input type="radio" name="p1" value="Linux"> Linux</label>
+                    <label><input type="radio" name="p1" value="Otro"> Otro</label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-group">
+                    <h3>2. ¿Qué red social usas con más frecuencia?</h3>
+                    <label><input type="radio" name="p2" value="Instagram" required> Instagram</label>
+                    <label><input type="radio" name="p2" value="Twitter/X"> Twitter/X</label>
+                    <label><input type="radio" name="p2" value="LinkedIn"> LinkedIn</label>
+                    <label><input type="radio" name="p2" value="TikTok"> TikTok</label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-group">
+                    <h3>3. ¿Cuántas horas al día pasas en internet?</h3>
+                    <label><input type="radio" name="p3" value="Menos de 2h" required> Menos de 2 horas</label>
+                    <label><input type="radio" name="p3" value="2 a 4h"> Entre 2 y 4 horas</label>
+                    <label><input type="radio" name="p3" value="4 a 6h"> Entre 4 y 6 horas</label>
+                    <label><input type="radio" name="p3" value="Más de 6h"> Más de 6 horas</label>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" id="btn-submit">Enviar Respuestas</button>
+                    <div id="loading" class="spinner" style="display: none;"></div>
+                </div>
+            </form>
+
+            <div id="success-message" style="display: none;">
+                <h3>¡Gracias por participar!</h3>
+                <p>Tus respuestas han sido registradas. Desliza para ver las estadísticas.</p>
+            </div>
+        </main>
+
+        <!-- Sección de Resultados (Oculta hasta que haya datos o se envíe) -->
+        <section class="card" id="results-section">
+            <h2>Resultados en Tiempo Real (<span id="total-responses">0</span> respuestas)</h2>
+            <div id="error-message" class="error"></div>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <canvas id="chart-p1"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart-p2"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart-p3"></canvas>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
